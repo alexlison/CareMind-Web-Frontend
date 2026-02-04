@@ -97,7 +97,7 @@ const LandingPage = () => {
               </div>
               <div className="flex items-baseline">
                 <span className="text-xl font-bold text-white tracking-tight">Care</span>
-                <span className="text-xl font-light text-white/95 tracking-tight">Mind</span>
+                <span className="text-xl font-light  text-white/95 tracking-tight">Mind</span>
               </div>
             </div>
 
