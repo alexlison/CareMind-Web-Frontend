@@ -10,6 +10,8 @@ const Login = () => {
   const [message, setMessage] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
+ 
+
   const [input, setInput] = useState({
     email: "",
     password: ""
@@ -64,6 +66,7 @@ const Login = () => {
       const data = response.data;
 
       if (data.Status === "Success") {
+        console.log("token --> ",data.token);
         sessionStorage.setItem("token", data.token);
         sessionStorage.setItem("user", JSON.stringify(data.user));
         sessionStorage.setItem("userId", data.user._id);
@@ -75,7 +78,7 @@ const Login = () => {
         if (data.user.role === "admin") {
           navigate("/admin/dashboard");
         } else if (data.user.role === "caregiver") {
-          navigate("/caregiver/dashboard");
+          navigate("/caregiverHome");
         } else {
           navigate("/dashboard");
         }
