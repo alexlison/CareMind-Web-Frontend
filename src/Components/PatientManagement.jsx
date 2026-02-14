@@ -219,7 +219,7 @@ const PatientManagement = () => {
 
                           <button
                             onClick={() =>
-                              navigate(`/caregiver/EditPatient/${patient._id}`)
+                              navigate(`/EditPatient/${patient._id}`)
                             }
                             className="p-2 text-green-600 hover:bg-blue-50 rounded"
                             title="Edit Patient"
