@@ -76,7 +76,7 @@ const Login = () => {
         setMessage("Login successful! Redirecting...");
 
         if (data.user.role === "admin") {
-          navigate("/admin/dashboard");
+          navigate("/adminHome");
         } else if (data.user.role === "caregiver") {
           navigate("/caregiverHome");
         } else {
