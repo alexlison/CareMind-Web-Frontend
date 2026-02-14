@@ -7,6 +7,7 @@ import {
   MessageSquare
 } from 'lucide-react';
 import PatientManagement from './PatientManagement';
+import RoutineManagement from './RoutineManagement';
 
 const CaregiverHome = () => {
   const navigate = useNavigate();
@@ -24,8 +25,8 @@ const CaregiverHome = () => {
   const menuItems = [
     { id: 'dashboard', label: 'Dashboard', icon: <Home className="w-5 h-5" /> },
     { id: 'patients', label: 'Patients', icon: <Users className="w-5 h-5" /> },
-    { id: 'tasks', label: 'Tasks', icon: <ClipboardCheck className="w-5 h-5" /> },
-    { id: 'messages', label: 'Messages', icon: <MessageSquare className="w-5 h-5" /> },
+    { id: 'routines', label: 'Routines', icon: <ClipboardCheck className="w-5 h-5" /> },
+    { id: 'monitoring', label: 'Monitoring', icon: <MessageSquare className="w-5 h-5" /> },
     { id: 'notifications', label: 'Notifications', icon: <Bell className="w-5 h-5" /> },
   ];
 
@@ -205,19 +206,16 @@ const renderPatients = () => (
   <PatientManagement />
 );
 
-  const renderTasks = () => (
+  const renderRoutines = () => (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 text-center">
-      <ClipboardCheck className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-      <h3 className="text-xl font-bold text-gray-900 mb-2">Tasks Management</h3>
-      <p className="text-gray-500">View and manage your caregiving tasks</p>
+       
+       <RoutineManagement />
     </div>
   );
 
-  const renderMessages = () => (
+  const renderMonitoring = () => (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 text-center">
-      <MessageSquare className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-      <h3 className="text-xl font-bold text-gray-900 mb-2">Messages</h3>
-      <p className="text-gray-500">Communicate with patients and colleagues</p>
+      
     </div>
   );
 
@@ -235,10 +233,10 @@ const renderPatients = () => (
         return renderDashboard();
       case 'patients':
         return renderPatients();
-      case 'tasks':
-        return renderTasks();
-      case 'messages':
-        return renderMessages();
+      case 'routines':
+        return renderRoutines();
+      case 'monitoring':
+        return renderMonitoring();
       case 'notifications':
         return renderNotifications();
       default:
