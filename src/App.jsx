@@ -10,6 +10,10 @@ import AddPatient from './Components/AddPatient.jsx'
 import EditPatient from './Components/EditPatient.jsx'
 import RoutineManagement from './Components/RoutineManagement.jsx'
 import AdminHome from './Components/AdminHome.jsx'
+import AddRoutine from './Components/AddRoutine.jsx'
+import AddMedicine from './Components/AddMedicine.jsx'
+import UpdateRoutine from './Components/UpdateRoutine.jsx'
+import UpdateMedicine from './Components/UpdateMedicine.jsx'
 
 function App() {
 
@@ -24,6 +28,10 @@ function App() {
         <Route path='/addPatient' element={<AddPatient />} />
         <Route path='/EditPatient/:id' element={<EditPatient />} />
         <Route path='/routineManagement' element={<RoutineManagement />} />
+        <Route path='/addRoutine' element={<AddRoutine />} />
+        <Route path='/editRoutine/:id' element={<UpdateRoutine />} />
+        <Route path='/addMedicine' element={<AddMedicine />} />
+        <Route path='/editMedicine/:id' element={<UpdateMedicine />} />
         <Route path='/adminHome' element={<AdminHome />} />
       </Routes>
     </BrowserRouter>
