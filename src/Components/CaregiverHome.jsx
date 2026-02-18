@@ -4,10 +4,12 @@ import {
   Users, UserPlus, User, LogOut, Menu, X,
   Home, Calendar, Bell,
   HeartPulse, Activity, ClipboardCheck,
-  MessageSquare
+  MessageSquare,
+  Link2
 } from 'lucide-react';
 import PatientManagement from './PatientManagement';
 import RoutineManagement from './RoutineManagement';
+import RelationManagement from './RelationManagement';
 
 const CaregiverHome = () => {
   const navigate = useNavigate();
@@ -26,6 +28,7 @@ const CaregiverHome = () => {
     { id: 'dashboard', label: 'Dashboard', icon: <Home className="w-5 h-5" /> },
     { id: 'patients', label: 'Patients', icon: <Users className="w-5 h-5" /> },
     { id: 'routines', label: 'Routines', icon: <ClipboardCheck className="w-5 h-5" /> },
+    { id: 'relations', label: 'Relations', icon: <Link2 className="w-5 h-5" /> },
     { id: 'monitoring', label: 'Monitoring', icon: <MessageSquare className="w-5 h-5" /> },
     { id: 'notifications', label: 'Notifications', icon: <Bell className="w-5 h-5" /> },
   ];
@@ -213,6 +216,13 @@ const renderPatients = () => (
     </div>
   );
 
+    const renderRelations = () => (
+    <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 text-center">
+        
+        <RelationManagement />
+    </div>
+  );
+
   const renderMonitoring = () => (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 text-center">
       
@@ -235,6 +245,8 @@ const renderPatients = () => (
         return renderPatients();
       case 'routines':
         return renderRoutines();
+      case 'relations':
+        return renderRelations();
       case 'monitoring':
         return renderMonitoring();
       case 'notifications':

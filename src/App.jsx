@@ -14,6 +14,9 @@ import AddRoutine from './Components/AddRoutine.jsx'
 import AddMedicine from './Components/AddMedicine.jsx'
 import UpdateRoutine from './Components/UpdateRoutine.jsx'
 import UpdateMedicine from './Components/UpdateMedicine.jsx'
+import AddRelation from './Components/AddRelation.jsx'
+import EditRelation from './Components/EditRelation.jsx'
+import RelationManagement from './Components/RelationManagement.jsx'
 
 function App() {
 
@@ -32,6 +35,9 @@ function App() {
         <Route path='/editRoutine/:id' element={<UpdateRoutine />} />
         <Route path='/addMedicine' element={<AddMedicine />} />
         <Route path='/editMedicine/:id' element={<UpdateMedicine />} />
+        <Route path='/relationManagment' element={<RelationManagement />} />
+        <Route path='/addRelation' element={<AddRelation />} />
+        <Route path='/editRelation/:id' element={<EditRelation />} />
         <Route path='/adminHome' element={<AdminHome />} />
       </Routes>
     </BrowserRouter>
