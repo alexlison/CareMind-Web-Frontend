@@ -10,6 +10,8 @@ import {
 import PatientManagement from './PatientManagement';
 import RoutineManagement from './RoutineManagement';
 import RelationManagement from './RelationManagement';
+import NotificationManagement from './NotificationManagement';
+import axios from 'axios';
 
 const CaregiverHome = () => {
   const navigate = useNavigate();
@@ -23,6 +25,21 @@ const CaregiverHome = () => {
     todayAppointments: 0
   });
   const [activeTab, setActiveTab] = useState('dashboard');
+    const [unreadCount, setUnreadCount] = useState(0);
+  const fetchNotificationCount = async (token) => {
+    try {
+      const response = await axios.get(
+        "http://localhost:5000/api/caregiver/notifications",
+        { headers: { 'token': token } }
+      );
+
+      if (response.data.status === "SUCCESS") {
+        setUnreadCount(response.data.unreadCount || 0);
+      }
+    } catch (error) {
+      console.error("Error fetching notification count:", error);
+    }
+  };
 
   const menuItems = [
     { id: 'dashboard', label: 'Dashboard', icon: <Home className="w-5 h-5" /> },
@@ -51,7 +68,7 @@ const CaregiverHome = () => {
         navigate('/login');
         return;
       }
-
+     fetchNotificationCount(token);
       if (isMounted) {
         if (storedUserName) {
           setUserName(storedUserName);
@@ -66,6 +83,7 @@ const CaregiverHome = () => {
         }
       }
     };
+    
 
     initializeUser();
 
@@ -231,9 +249,7 @@ const renderPatients = () => (
 
   const renderNotifications = () => (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 text-center">
-      <Bell className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-      <h3 className="text-xl font-bold text-gray-900 mb-2">Notifications</h3>
-      <p className="text-gray-500">View your notifications and alerts</p>
+        <NotificationManagement />
     </div>
   );
 
@@ -320,9 +336,18 @@ const renderPatients = () => (
           </div>
           
           <div className="flex items-center gap-4">
-            <button className="relative p-2 text-gray-600 hover:text-gray-900" aria-label="Notifications">
+               <button 
+              onClick={() => setActiveTab('notifications')}
+              className="relative p-2.5 text-gray-600 hover:text-[#2d9134] hover:bg-gray-100 rounded-lg transition-colors"
+              aria-label="View notifications"
+            >
               <Bell className="w-5 h-5" />
-              <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+              {unreadCount > 0 && (
+                <span className="absolute -top-1 -right-1 min-w-[20px] h-5 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center px-1">
+                  {unreadCount > 9 ? '9+' : unreadCount}
+                  
+                </span>
+              )}
             </button>
             <button
               onClick={handleLogout}

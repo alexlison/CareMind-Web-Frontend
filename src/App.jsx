@@ -17,6 +17,7 @@ import UpdateMedicine from './Components/UpdateMedicine.jsx'
 import AddRelation from './Components/AddRelation.jsx'
 import EditRelation from './Components/EditRelation.jsx'
 import RelationManagement from './Components/RelationManagement.jsx'
+import NotificationManagement from './Components/NotificationManagement.jsx'
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
         <Route path='/relationManagment' element={<RelationManagement />} />
         <Route path='/addRelation' element={<AddRelation />} />
         <Route path='/editRelation/:id' element={<EditRelation />} />
+        <Route path="/notifications" element={<NotificationManagement />} />
         <Route path='/adminHome' element={<AdminHome />} />
       </Routes>
     </BrowserRouter>
