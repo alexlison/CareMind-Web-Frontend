@@ -12,6 +12,7 @@ import RoutineManagement from './RoutineManagement';
 import RelationManagement from './RelationManagement';
 import NotificationManagement from './NotificationManagement';
 import axios from 'axios';
+import MonitoringManagement from './MonitoringManagement';
 
 const CaregiverHome = () => {
   const navigate = useNavigate();
@@ -243,7 +244,7 @@ const renderPatients = () => (
 
   const renderMonitoring = () => (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 text-center">
-      
+        <MonitoringManagement />
     </div>
   );
 

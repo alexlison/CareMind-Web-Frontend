@@ -18,6 +18,7 @@ import AddRelation from './Components/AddRelation.jsx'
 import EditRelation from './Components/EditRelation.jsx'
 import RelationManagement from './Components/RelationManagement.jsx'
 import NotificationManagement from './Components/NotificationManagement.jsx'
+import MonitoringManagement from './Components/MonitoringManagement.jsx'
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
         <Route path='/relationManagment' element={<RelationManagement />} />
         <Route path='/addRelation' element={<AddRelation />} />
         <Route path='/editRelation/:id' element={<EditRelation />} />
+        <Route path='/monitoring' element={<MonitoringManagement />} />
         <Route path="/notifications" element={<NotificationManagement />} />
         <Route path='/adminHome' element={<AdminHome />} />
       </Routes>
