@@ -332,7 +332,7 @@ const renderPatients = () => (
               <h1 className="text-2xl text-left font-bold text-gray-900 capitalize">
                 {activeTab === 'dashboard' ? 'Dashboard' : activeTab}
               </h1>
-              <p className="text-sm text-gray-600">Manage your caregiving activities</p>
+              <p className="text-xs text-gray-600">Manage your caregiving activities</p>
             </div>
           </div>
           
