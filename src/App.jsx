@@ -21,15 +21,20 @@ import NotificationManagement from './Components/NotificationManagement.jsx'
 import MonitoringManagement from './Components/MonitoringManagement.jsx'
 import CaregiverDashboard from './Components/CaregiverDashboard.jsx'
 import EditCaregiver from './Components/EditCaregiver.jsx'
+import AdminDashboard from './Components/AdminDashboard.jsx'
+import AdminViewAllCaregivers from './Components/AdminViewallCaregivers.jsx'
+import AdminViewAllPatients from './Components/AdminViewallPatients.jsx'
 
 function App() {
 
   return (
     <BrowserRouter>
       <Routes>
+        {/* Auth Routes */}
         <Route path='/' element={<LandingPage />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<SignUp />} />
+        {/* Caregiver Routes */}
         <Route path='/caregiverHome' element={<CaregiverHome />} />
         <Route path='/caregiverDashboard' element={<CaregiverDashboard />} />
         <Route path='/editCaregiver' element={<EditCaregiver />} />
@@ -46,7 +51,11 @@ function App() {
         <Route path='/editRelation/:id' element={<EditRelation />} />
         <Route path='/monitoring' element={<MonitoringManagement />} />
         <Route path="/notifications" element={<NotificationManagement />} />
+        {/* Admin Routes */}
         <Route path='/adminHome' element={<AdminHome />} />
+        <Route path='/adminDashboard' element={<AdminDashboard />} />
+        <Route path='/admin/caregiversAll' element={<AdminViewAllCaregivers />} />
+        <Route path='/admin/patientsAll' element={<AdminViewAllPatients />} />
       </Routes>
     </BrowserRouter>
   )
