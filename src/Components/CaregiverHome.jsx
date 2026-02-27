@@ -13,6 +13,7 @@ import RelationManagement from './RelationManagement';
 import NotificationManagement from './NotificationManagement';
 import axios from 'axios';
 import MonitoringManagement from './MonitoringManagement';
+import CaregiverDashboard from './CaregiverDashboard';
 
 const CaregiverHome = () => {
   const navigate = useNavigate();
@@ -110,67 +111,8 @@ const CaregiverHome = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm text-gray-600 mb-1">Total Patients</p>
-              <h3 className="text-3xl font-bold text-gray-900">{stats.totalPatients}</h3>
-            </div>
-            <div className="w-12 h-12 bg-gradient-to-br from-[#2d9134] to-[#359a3a] rounded-xl flex items-center justify-center">
-              <Users className="w-6 h-6 text-white" />
-            </div>
-          </div>
-          <div className="mt-4">
-            <div className="text-sm text-gray-600">Patients under your care</div>
-          </div>
-        </div>
-
-        <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm text-gray-600 mb-1">Active Patients</p>
-              <h3 className="text-3xl font-bold text-gray-900">{stats.activePatients}</h3>
-            </div>
-            <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center">
-              <Activity className="w-6 h-6 text-white" />
-            </div>
-          </div>
-          <div className="mt-4">
-            <div className="text-sm text-gray-600">Currently active patients</div>
-          </div>
-        </div>
-
-        <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm text-gray-600 mb-1">Pending Tasks</p>
-              <h3 className="text-3xl font-bold text-gray-900">{stats.pendingTasks}</h3>
-            </div>
-            <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center">
-              <ClipboardCheck className="w-6 h-6 text-white" />
-            </div>
-          </div>
-          <div className="mt-4">
-            <div className="text-sm text-gray-600">Tasks to complete today</div>
-          </div>
-        </div>
-
-        <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm text-gray-600 mb-1">Today&apos;s Appointments</p>
-              <h3 className="text-3xl font-bold text-gray-900">{stats.todayAppointments}</h3>
-            </div>
-            <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
-              <Calendar className="w-6 h-6 text-white" />
-            </div>
-          </div>
-          <div className="mt-4">
-            <div className="text-sm text-gray-600">Scheduled for today</div>
-          </div>
-        </div>
-      </div>
+     {/* // place the CaregiverDashboard.jsx here  */}
+     <CaregiverDashboard />
 
       <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8">
         <h3 className="text-xl font-bold text-gray-900 mb-6">Quick Actions</h3>
@@ -206,7 +148,7 @@ const CaregiverHome = () => {
           </button>
           
           <button 
-            onClick={() => setActiveTab('tasks')}
+            onClick={() => setActiveTab('routines')}
             className="p-6 bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200 rounded-xl hover:shadow-md transition-shadow"
           >
             <div className="flex items-center gap-3">

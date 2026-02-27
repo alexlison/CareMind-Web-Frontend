@@ -19,6 +19,8 @@ import EditRelation from './Components/EditRelation.jsx'
 import RelationManagement from './Components/RelationManagement.jsx'
 import NotificationManagement from './Components/NotificationManagement.jsx'
 import MonitoringManagement from './Components/MonitoringManagement.jsx'
+import CaregiverDashboard from './Components/CaregiverDashboard.jsx'
+import EditCaregiver from './Components/EditCaregiver.jsx'
 
 function App() {
 
@@ -29,6 +31,8 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<SignUp />} />
         <Route path='/caregiverHome' element={<CaregiverHome />} />
+        <Route path='/caregiverDashboard' element={<CaregiverDashboard />} />
+        <Route path='/editCaregiver' element={<EditCaregiver />} />
         <Route path='/patientManagement' element={<PatientManagement />} />
         <Route path='/addPatient' element={<AddPatient />} />
         <Route path='/EditPatient/:id' element={<EditPatient />} />
