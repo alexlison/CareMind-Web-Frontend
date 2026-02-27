@@ -111,7 +111,6 @@ const CaregiverHome = () => {
         </div>
       </div>
 
-     {/* // place the CaregiverDashboard.jsx here  */}
      <CaregiverDashboard />
 
       <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8">
